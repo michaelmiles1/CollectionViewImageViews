@@ -11,13 +11,24 @@ class ImageViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageView.image = image.resizeImage(maxWidth: view.frame.width, maxHeight: view.frame.height)
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        imageView.frame = CGRect(origin: imageView.frame.origin, size: CGSize(width: imageView.image!.size.width, height: imageView.image!.size.width))
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

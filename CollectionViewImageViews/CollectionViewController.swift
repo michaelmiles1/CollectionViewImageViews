@@ -42,6 +42,10 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
         print(cell.frame)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        vc.image = cell.imageView.image
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     

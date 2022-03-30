@@ -63,36 +63,49 @@
             </objects>
             <point key="canvasLocation" x="71" y="108"/>
         </scene>
-        <!--Image View Controller-->
+        <!--ImageViewController-->
         <scene sceneID="270-fb-BQd">
             <objects>
-                <viewController id="Pqm-2K-w7b" customClass="ImageViewController" customModule="CollectionViewImageViews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ImageViewController" storyboardIdentifier="ImageViewController" title="ImageViewController" id="Pqm-2K-w7b" customClass="ImageViewController" customModule="CollectionViewImageViews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIa-d6-MTL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebird" translatesAutoresizingMaskIntoConstraints="NO" id="evl-LX-WDv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d8-cm-jsB">
+                                <rect key="frame" x="369.5" y="48" width="40.5" height="32"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="gray"/>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="Pqm-2K-w7b" eventType="touchUpInside" id="NNq-Kt-EsW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IRD-2s-5MK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="evl-LX-WDv" firstAttribute="centerX" secondItem="OIa-d6-MTL" secondAttribute="centerX" id="0Hw-in-l2J"/>
-                            <constraint firstItem="evl-LX-WDv" firstAttribute="centerY" secondItem="OIa-d6-MTL" secondAttribute="centerY" id="MIN-c4-0bh"/>
+                            <constraint firstItem="IRD-2s-5MK" firstAttribute="trailing" secondItem="1d8-cm-jsB" secondAttribute="trailing" constant="4" id="HjW-du-Wcx"/>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="top" relation="lessThanOrEqual" secondItem="IRD-2s-5MK" secondAttribute="top" id="LSH-cy-f6W"/>
                             <constraint firstItem="IRD-2s-5MK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="evl-LX-WDv" secondAttribute="trailing" id="VCu-tY-Uqo"/>
                             <constraint firstItem="evl-LX-WDv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IRD-2s-5MK" secondAttribute="leading" id="aGp-LP-YX5"/>
                             <constraint firstItem="IRD-2s-5MK" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="evl-LX-WDv" secondAttribute="bottom" id="d9A-xF-box"/>
-                            <constraint firstItem="evl-LX-WDv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IRD-2s-5MK" secondAttribute="top" id="ydU-v1-xQg"/>
+                            <constraint firstItem="1d8-cm-jsB" firstAttribute="top" secondItem="IRD-2s-5MK" secondAttribute="top" constant="4" id="lEa-Ow-huq"/>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="centerY" secondItem="OIa-d6-MTL" secondAttribute="centerY" id="qeP-1h-WAU"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="OuN-fY-deX"/>
+                    </toolbarItems>
                     <connections>
                         <outlet property="imageView" destination="evl-LX-WDv" id="9dI-8c-IsT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNg-UJ-etU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="107"/>
+            <point key="canvasLocation" x="992.75362318840587" y="106.47321428571428"/>
         </scene>
     </scenes>
     <resources>
