@@ -32,7 +32,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
         
-        let img = resizeImage(image: UIImage(named: imageNameArray[indexPath.row])!, maxWidth: 100, maxHeight: 100)
+        let img = UIImage(named: imageNameArray[indexPath.row])!.resizeImage(maxWidth: 100, maxHeight: 100)
         cell.imageView.image = img
         cell.imageView.frame = CGRect(origin: cell.imageView.frame.origin, size: CGSize(width: img!.size.width, height: img!.size.height))
     
@@ -44,26 +44,6 @@ class CollectionViewController: UICollectionViewController {
         print(cell.frame)
     }
     
-    func resizeImage(image: UIImage, maxWidth: CGFloat, maxHeight: CGFloat) -> UIImage? {
-        var newWidth = maxWidth
-        var newHeight = maxHeight
-        
-        if image.size.height > image.size.width {
-            let scale = newHeight / image.size.height
-            newWidth = image.size.width * scale
-        }
-        else {
-            let scale = newWidth / image.size.width
-            newHeight = image.size.height * scale
-        }
-        
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage
-    }
+    
 
 }

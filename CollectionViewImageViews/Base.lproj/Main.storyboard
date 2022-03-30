@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,6 +62,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ql-la-I69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="108"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="270-fb-BQd">
+            <objects>
+                <viewController id="Pqm-2K-w7b" customClass="ImageViewController" customModule="CollectionViewImageViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OIa-d6-MTL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebird" translatesAutoresizingMaskIntoConstraints="NO" id="evl-LX-WDv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IRD-2s-5MK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="centerX" secondItem="OIa-d6-MTL" secondAttribute="centerX" id="0Hw-in-l2J"/>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="centerY" secondItem="OIa-d6-MTL" secondAttribute="centerY" id="MIN-c4-0bh"/>
+                            <constraint firstItem="IRD-2s-5MK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="evl-LX-WDv" secondAttribute="trailing" id="VCu-tY-Uqo"/>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IRD-2s-5MK" secondAttribute="leading" id="aGp-LP-YX5"/>
+                            <constraint firstItem="IRD-2s-5MK" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="evl-LX-WDv" secondAttribute="bottom" id="d9A-xF-box"/>
+                            <constraint firstItem="evl-LX-WDv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IRD-2s-5MK" secondAttribute="top" id="ydU-v1-xQg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="evl-LX-WDv" id="9dI-8c-IsT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNg-UJ-etU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="107"/>
         </scene>
     </scenes>
     <resources>

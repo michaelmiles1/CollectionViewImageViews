@@ -14,6 +14,8 @@
 		5CEB6F4527F4C96E003B4577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CEB6F4327F4C96E003B4577 /* LaunchScreen.storyboard */; };
 		5CEB6F4D27F4D19E003B4577 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB6F4C27F4D19E003B4577 /* CollectionViewController.swift */; };
 		5CEB6F5327F4E828003B4577 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB6F5227F4E828003B4577 /* ImageCollectionViewCell.swift */; };
+		5CEB6F5927F50912003B4577 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB6F5827F50912003B4577 /* ImageViewController.swift */; };
+		5CEB6F5B27F50968003B4577 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB6F5A27F50968003B4577 /* ImageUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		5CEB6F4627F4C96E003B4577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CEB6F4C27F4D19E003B4577 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		5CEB6F5227F4E828003B4577 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		5CEB6F5827F50912003B4577 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		5CEB6F5A27F50968003B4577 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 			children = (
 				5CEB6F3827F4C964003B4577 /* AppDelegate.swift */,
 				5CEB6F3A27F4C964003B4577 /* SceneDelegate.swift */,
+				5CEB6F5827F50912003B4577 /* ImageViewController.swift */,
 				5CEB6F4C27F4D19E003B4577 /* CollectionViewController.swift */,
+				5CEB6F5A27F50968003B4577 /* ImageUtil.swift */,
 				5CEB6F5227F4E828003B4577 /* ImageCollectionViewCell.swift */,
 				5CEB6F3E27F4C964003B4577 /* Main.storyboard */,
 				5CEB6F4127F4C96E003B4577 /* Assets.xcassets */,
@@ -143,6 +149,8 @@
 			files = (
 				5CEB6F4D27F4D19E003B4577 /* CollectionViewController.swift in Sources */,
 				5CEB6F3927F4C964003B4577 /* AppDelegate.swift in Sources */,
+				5CEB6F5927F50912003B4577 /* ImageViewController.swift in Sources */,
+				5CEB6F5B27F50968003B4577 /* ImageUtil.swift in Sources */,
 				5CEB6F5327F4E828003B4577 /* ImageCollectionViewCell.swift in Sources */,
 				5CEB6F3B27F4C964003B4577 /* SceneDelegate.swift in Sources */,
 			);
