@@ -67,10 +67,10 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var transitionFrame: CGRect!
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        0.5
+        0.2
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {        
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toVC = transitionContext.viewController(forKey: .to)!
         let toView = transitionContext.view(forKey: .to)
         
