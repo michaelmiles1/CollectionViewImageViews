@@ -11,6 +11,8 @@ private let reuseIdentifier = "ImageCollectionViewCell"
 
 class CollectionViewController: UICollectionViewController {
     
+    var transitionFrame: CGRect!
+    
     let imageNameArray = [
         "nature-pool",
         "ocean-rocks",
@@ -41,13 +43,56 @@ class CollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
-        print(cell.frame)
+        transitionFrame = cell.frame
         let vc = storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
         vc.image = cell.imageView.image
         vc.modalPresentationStyle = .fullScreen
+        vc.transitioningDelegate = self
         present(vc, animated: true)
     }
     
     
 
 }
+
+extension CollectionViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animator = TransitionAnimator()
+        animator.transitionFrame = transitionFrame
+        return animator
+    }
+}
+
+class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    var transitionFrame: CGRect!
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        0.5
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {        
+        let toVC = transitionContext.viewController(forKey: .to)!
+        let toView = transitionContext.view(forKey: .to)
+        
+        if let toView = toView {
+            transitionContext.containerView.addSubview(toView)
+        }
+        
+        toView?.frame = transitionFrame
+        toView?.layoutIfNeeded()
+        
+        let duration = transitionDuration(using: transitionContext)
+        let finalFrame = transitionContext.finalFrame(for: toVC)
+        
+        UIView.animate(withDuration: duration) {
+            toView?.frame = finalFrame
+            toView?.layoutIfNeeded()
+        } completion: { completed in
+            transitionContext.completeTransition(true)
+        }
+
+    }
+    
+}
+
+
